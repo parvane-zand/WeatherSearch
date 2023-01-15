@@ -63,6 +63,13 @@ a {
   color: #f8f9fa;
   text-shadow: 3px 0px 10px black;
 }
+.git {
+  text-align: center;
+  font-size: 25px;
+  color: #626262;
+  text-shadow: 3px 0px 10px black;
+}
+
 .future {
   color: #9cd3ff;
   text-align: center;
