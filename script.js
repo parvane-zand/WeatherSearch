@@ -50,33 +50,38 @@ function showTemp(response) {
 
 function API(cityInput) {
   let apiKey = "c119ffef35b7245a5e03b6e5724ae961";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=${unit}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
 
 function search(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#inputSearch2");
+  let cityName = document.querySelector("#city-name");
+  cityName.innerHTML = cityInput.value;
   unit = "metric";
-  API(cityInput);
+  API(cityInput.value);
 }
 function toFarenheit(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#inputSearch2");
+  let cityName = document.querySelector("#city-name").innerHTML;
   unit = "imperial";
-  API(cityInput);
+  API(cityName);
 }
 
 function toCelsius(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#inputSearch2");
+  let cityName = document.querySelector("#city-name").innerHTML;
   unit = "metric";
-  API(cityInput);
+  API(cityName);
 }
 
+let unit = "metric";
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 let fahrenheit = document.querySelector("#far");
 fahrenheit.addEventListener("click", toFarenheit);
 let celsius = document.querySelector("#cel");
 celsius.addEventListener("click", toCelsius);
+
+API("Tehran");
