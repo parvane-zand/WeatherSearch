@@ -16,19 +16,12 @@ h1 {
 }
 
 .form-control {
-  width: 210px;
+  width: 300px;
   border-radius: 20px;
   box-shadow: 1px 1px 7px black;
 }
 .btn-success {
-  width: 90px;
-  border-width: 2px;
-  border-radius: 20px;
-  box-shadow: 1px 1px 7px black;
-  transition: all 200ms ease-in-out;
-}
-.btn-primary {
-  width: 90px;
+  width: 100px;
   border-width: 2px;
   border-radius: 20px;
   box-shadow: 1px 1px 7px black;
