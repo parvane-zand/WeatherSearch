@@ -32,6 +32,9 @@ h1 {
   text-shadow: 2px 0px 10px #f8f9fa;
   font-size: 190px;
 }
+.icon {
+  padding-top: 25px;
+}
 .unit {
   font-family: "Nunito";
   font-size: 25px;

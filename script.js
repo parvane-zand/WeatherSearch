@@ -43,9 +43,20 @@ function showTemp(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
+  if (unit === "metric") {
+    wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+    console.log(wind.innerHTML);
+  } else {
+    wind.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
+  }
   wind.innerHTML = Math.round(response.data.wind.speed);
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
+  let wIcon = document.querySelector("#weather-icon");
+  wIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function API(cityInput) {
