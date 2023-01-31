@@ -1,5 +1,5 @@
 body {
-  background-color: #e5e3e4;
+  background-color: #e5e3e4;  
 }
 .container {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/059/697/original/6119368.jpg?1671481891");
@@ -7,7 +7,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   max-width: 800px;
-  margin: 30px auto;
+  margin: 60px auto;
   padding: 30px 60px;
   border-radius: 20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,7 +18,11 @@ h1 {
   font-size: 48px;
   text-transform: capitalize;
 }
-
+h6 {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  text-transform: capitalize;
+}
 .form-control {
   width: 500px;
   border-radius: 20px;
@@ -57,6 +61,7 @@ a {
   text-align: center;
   color: #f8f9fa;
   text-shadow: 2px 0px 10px black;
+  font-size: 18px;
 }
 .days {
   text-align: center;
@@ -76,8 +81,14 @@ a {
   text-shadow: 3px 0px 10px black;
 }
 
-.future {
-  color: #9cd3ff;
+.future-max {
+  color: #9fcff7;
+  text-align: center;
+  text-shadow: 5px 0px 10px black;
+  margin-bottom: 20px;
+}
+.future-min {
+  color: #9fcff7;
   text-align: center;
   text-shadow: 4px 0px 10px black;
   margin-bottom: 20px;

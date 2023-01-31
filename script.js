@@ -35,6 +35,44 @@ function formatDate(Todays) {
 let dateValue = document.querySelector("#date");
 dateValue.innerHTML = formatDate(date);
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let weekDays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  return weekDays[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast-temp");
+  let forecastHTML = `<div class="row days">`;
+
+forecast.forEach(function(forecastDays , index) {
+  if (index < 6) {
+  forecastHTML = forecastHTML + `
+    <div class="col-2"><strong>${formatDay(forecastDays.dt)}</strong>
+      <div class="icons">
+      <img
+      src="http://openweathermap.org/img/wn/${forecastDays.weather[0].icon}@2x.png"
+      width = 45px;/>
+      </div>
+      <span class="future-max">
+        <strong>${Math.round(forecastDays.temp.max)}°</strong>
+      </span>
+        <span class="future-min"> ${Math.round(forecastDays.temp.min)}°</span>
+    </div>`;}
+})
+
+  forecastHTML = forecastHTML + `</div>`
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getDailyForecast(coordinates) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemp(response) {
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = Math.round(response.data.main.temp);
@@ -57,10 +95,11 @@ function showTemp(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getDailyForecast(response.data.coord);
 }
 
 function API(cityInput) {
-  let apiKey = "c119ffef35b7245a5e03b6e5724ae961";
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=${unit}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
