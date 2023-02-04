@@ -1,5 +1,5 @@
 body {
-  background-color: #e5e3e4;  
+  background-color: #e5e3e4;
 }
 .container {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/059/697/original/6119368.jpg?1671481891");
@@ -65,13 +65,12 @@ a {
 }
 .days {
   text-align: center;
-  color: #f8f9fa;
+  color: #141619;
   text-shadow: 2px 0px 10px black;
 }
 .icons {
   text-align: center;
   font-size: 30px;
-  color: #f8f9fa;
   text-shadow: 3px 0px 10px black;
 }
 .git {
@@ -82,16 +81,23 @@ a {
 }
 
 .future-max {
-  color: #9fcff7;
+  color: #1c639f;
   text-align: center;
   text-shadow: 5px 0px 10px black;
   margin-bottom: 20px;
 }
 .future-min {
-  color: #9fcff7;
+  color: #2281d2;
   text-align: center;
   text-shadow: 4px 0px 10px black;
   margin-bottom: 20px;
+}
+.weather-forecast {
+  background-color: #e5e3e4;
+  opacity: 0.6;
+  box-shadow: 1px 1px 7px #084298a3;
+  border-radius: 100px;
+  padding: 15px;
 }
 hr {
   margin: 3rem 0;
